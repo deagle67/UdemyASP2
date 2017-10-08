@@ -1,4 +1,4 @@
-﻿@model UdemyASP.ViewModels.CustomersViewModel
+﻿@model UdemyASP2.ViewModels.CustomersViewModel
 
 @{
     ViewBag.Title = "Customers";
@@ -16,7 +16,7 @@ else
     <ul>
         @foreach(var customer in Model.customers)
         {
-            <li>@Html.ActionLink(@customer.Name, "details/" + customer.Id)</li>
+            <li>@Html.ActionLink(@customer.Name, "details", "Customers", new { id = customer.Id }, null)</li>
         }
     </ul>
 }

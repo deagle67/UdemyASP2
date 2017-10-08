@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using UdemyASP.ViewModels;
-using UdemyASP.Models;
+using UdemyASP2.ViewModels;
+using UdemyASP2.Models;
 
-namespace UdemyASP.Controllers
+namespace UdemyASP2.Controllers
 {
     public class CustomersController : Controller
     {

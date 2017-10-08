@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using UdemyASP.Models;
+using UdemyASP2.Models;
 
-namespace UdemyASP.ViewModels
+namespace UdemyASP2.ViewModels
 {
     public class RandomMovieViewModel
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace UdemyASP.Models
+namespace UdemyASP2.Models
 {
     public class Customer
     {
