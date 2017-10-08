@@ -1,0 +1,23 @@
+﻿@model UdemyASP.ViewModels.CustomersViewModel
+
+@{
+    ViewBag.Title = "Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customers</h2>
+
+@if(Model.customers.Count == 0)
+{
+    <p>No customers found.</p>
+}
+else
+{
+    <ul>
+        @foreach(var customer in Model.customers)
+        {
+            <li>@Html.ActionLink(@customer.Name, "details/" + customer.Id)</li>
+        }
+    </ul>
+}
+

@@ -1,0 +1,23 @@
+﻿@model UdemyASP.ViewModels.MoviesViewModel
+
+@{
+    ViewBag.Title = "Movies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Movies</h2>
+
+@if (Model.movies.Count == 0)
+{
+    <p>No movies found.</p>
+}
+else
+{
+    <ul>
+        @foreach (var movie in Model.movies)
+        {
+            <li>@movie.Name</li>
+        }
+    </ul>
+}
+
