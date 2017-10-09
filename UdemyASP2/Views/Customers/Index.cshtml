@@ -1,4 +1,4 @@
-﻿@model UdemyASP2.ViewModels.CustomersViewModel
+﻿@model IEnumerable<UdemyASP2.Models.Customer>
 
 @{
     ViewBag.Title = "Customers";
@@ -7,17 +7,28 @@
 
 <h2>Customers</h2>
 
-@if(Model.customers.Count == 0)
+@if (!Model.Any())
 {
-    <p>No customers found.</p>
+    <p>We don't have any customers yet.</p>
 }
 else
 {
-    <ul>
-        @foreach(var customer in Model.customers)
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Customers</th>
+            <th>MemberShip Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
         {
-            <li>@Html.ActionLink(@customer.Name, "details", "Customers", new { id = customer.Id }, null)</li>
+            <tr>
+                <td>@Html.ActionLink(@customer.Name, "details", "Customers", new { id = customer.Id }, null)</td>
+                <td>@customer.MemberShipType.Name</td>
+            </tr>
         }
-    </ul>
+    </tbody>
+</table>
 }
 

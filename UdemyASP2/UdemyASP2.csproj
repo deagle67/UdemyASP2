@@ -213,6 +213,18 @@
     <Compile Include="Migrations\201710082246330_PopulateMembershipTypes.Designer.cs">
       <DependentUpon>201710082246330_PopulateMembershipTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710091918197_AddAnnotationsCustomerName.cs" />
+    <Compile Include="Migrations\201710091918197_AddAnnotationsCustomerName.Designer.cs">
+      <DependentUpon>201710091918197_AddAnnotationsCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710092022562_AddNameToMembershipType.cs" />
+    <Compile Include="Migrations\201710092022562_AddNameToMembershipType.Designer.cs">
+      <DependentUpon>201710092022562_AddNameToMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710092024527_AddNameToMembershipTypeDATA.cs" />
+    <Compile Include="Migrations\201710092024527_AddNameToMembershipTypeDATA.Designer.cs">
+      <DependentUpon>201710092024527_AddNameToMembershipTypeDATA.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -290,7 +302,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Customers\DetailsById.cshtml" />
+    <Content Include="Views\Customers\details.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Movies\Random.cshtml" />
@@ -324,6 +336,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710082246330_PopulateMembershipTypes.resx">
       <DependentUpon>201710082246330_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710091918197_AddAnnotationsCustomerName.resx">
+      <DependentUpon>201710091918197_AddAnnotationsCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710092022562_AddNameToMembershipType.resx">
+      <DependentUpon>201710092022562_AddNameToMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710092024527_AddNameToMembershipTypeDATA.resx">
+      <DependentUpon>201710092024527_AddNameToMembershipTypeDATA.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
