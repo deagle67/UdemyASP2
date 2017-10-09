@@ -14,6 +14,7 @@ namespace UdemyASP2.Models
         public string Name { get; set; }
         public bool IsSubscribedToNewsLetter { get; set; }
         public MemberShipType MemberShipType { get; set; }
+        public DateTime? BirthDate { get; set; }
         public byte MemberShipTypeId { get; set; }
     }
 }

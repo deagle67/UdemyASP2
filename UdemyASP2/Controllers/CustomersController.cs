@@ -39,7 +39,7 @@ namespace UdemyASP2.Controllers
         //[Route("customers/details/{id}")]
         public ActionResult Details(int id)
         {
-            var customerById = _context.Customers.SingleOrDefault(c => c.Id == id);
+            var customerById = _context.Customers.Include(c => c.MemberShipType).SingleOrDefault(c => c.Id == id);
 
             if (customerById == null)
                 return HttpNotFound();
