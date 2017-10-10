@@ -14,7 +14,11 @@ namespace UdemyASP2.Models
         public string Name { get; set; }
         public bool IsSubscribedToNewsLetter { get; set; }
         public MemberShipType MemberShipType { get; set; }
+
+        [Display(Name = "Date of Birth")]
         public DateTime? BirthDate { get; set; }
+
+        [Display(Name = "MemberShip Type")]
         public byte MemberShipTypeId { get; set; }
     }
 }
