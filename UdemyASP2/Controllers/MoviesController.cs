@@ -3,21 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using UdemyASP2.Models;
 using UdemyASP2.ViewModels;
+using UdemyASP2.Models;
+using System.Data.Entity;
 
 namespace UdemyASP2.Controllers
 {
     public class MoviesController : Controller
     {
-        List<Movie> listMovies = new List<Movie>
-        {
-            new Movie { Name = "Shrek", ID = 1 },
-            new Movie { Name = "Wall-E", ID = 2 }
-        };
+        ApplicationDbContext _context;
 
+        public MoviesController()
+        {
+            _context = new ApplicationDbContext();
+        }
         // GET: Movies
-        public ActionResult Random()
+        /*public ActionResult Random()
         {
             var movie = new Movie { Name = "Shrek!" };
 
@@ -39,22 +40,26 @@ namespace UdemyASP2.Controllers
             // return EmptyResult();
             //return RedirectToAction("Index", "Home", new { page = 1, sortBy = "name" });
 
-        }
+        }*/
 
-        [Route("movies/released/{year}/{month:regex(\\d{2}):range(1,12)}")]
+        /*[Route("movies/released/{year}/{month:regex(\\d{2}):range(1,12)}")]
         public ActionResult ByReleaseDate(int year, int month)
         {
             return Content(year + "/" + month);
+        }*/
+
+        public ActionResult Details(int id)
+        {
+            var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);
+
+            return View(movie);
         }
 
         public ActionResult Index()
         {
-            MoviesViewModel moviesViewModel = new MoviesViewModel
-            {
-                movies = listMovies
-            };
+            var movies = _context.Movies.Include(m => m.Genre).ToList();
 
-            return View(moviesViewModel);
+            return View(movies);
         }
     }
 }
