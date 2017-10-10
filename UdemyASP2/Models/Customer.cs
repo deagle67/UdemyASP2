@@ -16,9 +16,10 @@ namespace UdemyASP2.Models
         public MemberShipType MemberShipType { get; set; }
 
         [Display(Name = "Date of Birth")]
+        [Min18YearsIfMember]
         public DateTime? BirthDate { get; set; }
 
         [Display(Name = "MemberShip Type")]
-        public byte MemberShipTypeId { get; set; }
+        public byte? MemberShipTypeId { get; set; }
     }
 }
