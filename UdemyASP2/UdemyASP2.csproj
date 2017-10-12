@@ -249,6 +249,30 @@
     <Compile Include="Migrations\201710102213572_AddedValidations.Designer.cs">
       <DependentUpon>201710102213572_AddedValidations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710111912193_Prout.cs" />
+    <Compile Include="Migrations\201710111912193_Prout.Designer.cs">
+      <DependentUpon>201710111912193_Prout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710121314400_MovieDateAddedToNullable.cs" />
+    <Compile Include="Migrations\201710121314400_MovieDateAddedToNullable.Designer.cs">
+      <DependentUpon>201710121314400_MovieDateAddedToNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710121316352_MovieDateAddedToNullable1.cs" />
+    <Compile Include="Migrations\201710121316352_MovieDateAddedToNullable1.Designer.cs">
+      <DependentUpon>201710121316352_MovieDateAddedToNullable1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710121318525_MovieDateAddedToNullable2.cs" />
+    <Compile Include="Migrations\201710121318525_MovieDateAddedToNullable2.Designer.cs">
+      <DependentUpon>201710121318525_MovieDateAddedToNullable2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710121341262_MovieDateToDateTime2.cs" />
+    <Compile Include="Migrations\201710121341262_MovieDateToDateTime2.Designer.cs">
+      <DependentUpon>201710121341262_MovieDateToDateTime2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710121343308_CustomerBirthDateToDateTime2.cs" />
+    <Compile Include="Migrations\201710121343308_CustomerBirthDateToDateTime2.Designer.cs">
+      <DependentUpon>201710121343308_CustomerBirthDateToDateTime2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -256,6 +280,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MemberShipType.cs" />
+    <Compile Include="Models\MoviesStockBetween1And20.cs" />
     <Compile Include="Models\Min18YearsIfMember.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -394,6 +419,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710102213572_AddedValidations.resx">
       <DependentUpon>201710102213572_AddedValidations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710111912193_Prout.resx">
+      <DependentUpon>201710111912193_Prout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710121314400_MovieDateAddedToNullable.resx">
+      <DependentUpon>201710121314400_MovieDateAddedToNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710121316352_MovieDateAddedToNullable1.resx">
+      <DependentUpon>201710121316352_MovieDateAddedToNullable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710121318525_MovieDateAddedToNullable2.resx">
+      <DependentUpon>201710121318525_MovieDateAddedToNullable2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710121341262_MovieDateToDateTime2.resx">
+      <DependentUpon>201710121341262_MovieDateToDateTime2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710121343308_CustomerBirthDateToDateTime2.resx">
+      <DependentUpon>201710121343308_CustomerBirthDateToDateTime2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

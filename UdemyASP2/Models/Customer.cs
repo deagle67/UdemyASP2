@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -17,6 +18,7 @@ namespace UdemyASP2.Models
 
         [Display(Name = "Date of Birth")]
         [Min18YearsIfMember]
+        [Column(TypeName = "datetime2")]
         public DateTime? BirthDate { get; set; }
 
         [Display(Name = "MemberShip Type")]

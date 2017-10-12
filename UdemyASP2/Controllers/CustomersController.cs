@@ -52,6 +52,7 @@ namespace UdemyASP2.Controllers
             var memberShipTypes = _context.MemberShipTypes.ToList();
             var viewModel = new CustomerFormViewModel
             {
+                Customer = new Customer(),
                 MemberShipTypes = memberShipTypes
             };
 
@@ -59,6 +60,7 @@ namespace UdemyASP2.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
             if(!ModelState.IsValid)
