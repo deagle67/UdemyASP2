@@ -31,9 +31,9 @@ namespace UdemyASP2.Controllers
             };
             */
 
-            var customers = _context.Customers.Include(c => c.MemberShipType).ToList();
+            //var customers = _context.Customers.Include(c => c.MemberShipType).ToList();
 
-            return View(customers);
+            return View();
         }
 
         //[Route("customers/details/{id}")]
