@@ -29,6 +29,10 @@ namespace UdemyASP2.App_Start
             // MembershipType
 
             CreateMap<MemberShipType, MembershipTypeDto>();
+
+            // Genre
+
+            CreateMap<Genre, GenreDto>();
         }
     }
 }

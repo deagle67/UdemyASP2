@@ -6,6 +6,7 @@ using System.Web.Http;
 using UdemyASP2.Models;
 using UdemyASP2.Dtos;
 using AutoMapper;
+using System.Data.Entity;
 
 namespace UdemyASP2.Controllers.API
 {
@@ -22,6 +23,7 @@ namespace UdemyASP2.Controllers.API
         public IHttpActionResult GetMovies()
         {
             var moviesDto = _context.Movies
+                .Include(m => m.Genre)
                 .ToList()
                 .Select(Mapper.Map<Movie, MovieDto>);
             return Ok(moviesDto);
@@ -31,6 +33,7 @@ namespace UdemyASP2.Controllers.API
         public IHttpActionResult GetMovie(int id)
         {
             var movie = _context.Movies
+                .Include(m => m.Genre)
                 .SingleOrDefault(c => c.Id == id);
 
             if (movie == null)
