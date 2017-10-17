@@ -25,6 +25,10 @@ namespace UdemyASP2.App_Start
             CreateMap<Movie, MovieDto>();
 
             CreateMap<MovieDto, Movie>();
+
+            // MembershipType
+
+            CreateMap<MemberShipType, MembershipTypeDto>();
         }
     }
 }

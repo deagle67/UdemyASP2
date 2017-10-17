@@ -18,6 +18,6 @@ namespace UdemyASP2.Dtos
 
         public DateTime? BirthDate { get; set; }
 
-        public byte? MemberShipTypeId { get; set; }
+        public MembershipTypeDto MemberShipTypeId { get; set; }
     }
 }
