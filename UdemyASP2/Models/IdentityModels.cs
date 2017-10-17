@@ -26,7 +26,7 @@ namespace UdemyASP2.Models
         public DbSet<MemberShipType> MemberShipTypes { get; set; }
 
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("AzureConnection", throwIfV1Schema: false)
         {
         }
 
