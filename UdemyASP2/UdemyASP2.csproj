@@ -311,6 +311,10 @@
     <Compile Include="Migrations\201710121343308_CustomerBirthDateToDateTime2.Designer.cs">
       <DependentUpon>201710121343308_CustomerBirthDateToDateTime2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710181333556_SeedUsers.cs" />
+    <Compile Include="Migrations\201710181333556_SeedUsers.Designer.cs">
+      <DependentUpon>201710181333556_SeedUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -713,6 +717,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710121343308_CustomerBirthDateToDateTime2.resx">
       <DependentUpon>201710121343308_CustomerBirthDateToDateTime2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710181333556_SeedUsers.resx">
+      <DependentUpon>201710181333556_SeedUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
