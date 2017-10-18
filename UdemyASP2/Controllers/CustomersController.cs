@@ -9,6 +9,7 @@ using System.Data.Entity;
 
 namespace UdemyASP2.Controllers
 {
+    [Authorize]
     public class CustomersController : Controller
     {
         private ApplicationDbContext _context;
