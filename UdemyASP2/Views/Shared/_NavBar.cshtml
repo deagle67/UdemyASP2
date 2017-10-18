@@ -13,8 +13,13 @@
             <ul class="nav navbar-nav">
                 <li>@Html.ActionLink("Customers", "Index", "Customers")</li>
                 <li>@Html.ActionLink("Movies", "Index", "Movies")</li>
-                <li style="float:right">@Html.Partial("_LoginPartial")</li>
+                <li>@Html.Partial("_LoginPartial")</li>
             </ul>
+        </div>
+        <div class="float-right">
+            <section id="login">
+                @Html.Partial("_LoginPartial")
+            </section>
         </div>
     </div>
 </div>
