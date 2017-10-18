@@ -57,12 +57,13 @@ namespace UdemyASP2.Controllers
 
         public ActionResult Index()
         {
-            if (User.IsInRole("CanManageMovies"))
+            if (User.IsInRole(RoleName.CanManageMovies))
                 return View("List");
 
             return View("ReadOnlyList");
         }
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult New()
         {
             var genres = _context.Genres.ToList();
