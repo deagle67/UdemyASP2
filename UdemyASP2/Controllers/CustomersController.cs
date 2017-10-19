@@ -84,7 +84,6 @@ namespace UdemyASP2.Controllers
                 customerInDb.BirthDate = customer.BirthDate;
                 customerInDb.MemberShipTypeId = customer.MemberShipTypeId;
                 customerInDb.IsSubscribedToNewsLetter = customer.IsSubscribedToNewsLetter;
-                customerInDb.PhoneNumber = customer.PhoneNumber;
             }
 
             _context.SaveChanges();

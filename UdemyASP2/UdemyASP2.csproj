@@ -323,6 +323,10 @@
     <Compile Include="Migrations\201710191502305_AddPhoneNumberToCustomer.Designer.cs">
       <DependentUpon>201710191502305_AddPhoneNumberToCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710191542036_DelPhoneNumberToCustomer.cs" />
+    <Compile Include="Migrations\201710191542036_DelPhoneNumberToCustomer.Designer.cs">
+      <DependentUpon>201710191542036_DelPhoneNumberToCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -736,6 +740,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710191502305_AddPhoneNumberToCustomer.resx">
       <DependentUpon>201710191502305_AddPhoneNumberToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710191542036_DelPhoneNumberToCustomer.resx">
+      <DependentUpon>201710191542036_DelPhoneNumberToCustomer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

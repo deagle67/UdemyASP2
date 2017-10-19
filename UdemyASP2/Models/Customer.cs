@@ -23,9 +23,5 @@ namespace UdemyASP2.Models
 
         [Display(Name = "MemberShip Type")]
         public byte? MemberShipTypeId { get; set; }
-
-        [Required]
-        [StringLength(50)]
-        public string PhoneNumber { get; set; }
     }
 }
