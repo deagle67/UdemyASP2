@@ -374,7 +374,7 @@ namespace UdemyASP2.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, DrivingLicense = model.DrivingLicense };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, DrivingLicense = model.DrivingLicense, PhoneNumber = model.PhoneNumber };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

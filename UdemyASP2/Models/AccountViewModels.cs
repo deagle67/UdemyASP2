@@ -12,6 +12,10 @@ namespace UdemyASP2.Models
         [Required]
         [Display(Name = "Driving License")]
         public string DrivingLicense { get; set; }
+
+        [Required]
+        [Display(Name = "Phone Number")]
+        public string PhoneNumber { get; set; }
     }
 
     public class ExternalLoginListViewModel
@@ -71,6 +75,11 @@ namespace UdemyASP2.Models
         [Required]
         [Display(Name = "Driving License")]
         public string DrivingLicense { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        [Display(Name = "Phone Number")]
+        public string PhoneNumber { get; set; }
 
         [Required]
         [EmailAddress]

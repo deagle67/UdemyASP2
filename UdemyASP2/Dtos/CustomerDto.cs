@@ -12,6 +12,8 @@ namespace UdemyASP2.Dtos
     {
         public int Id { get; set; }
 
+        [Required]
+        [StringLength(255)]
         public string Name { get; set; }
 
         public bool IsSubscribedToNewsLetter { get; set; }
@@ -21,5 +23,9 @@ namespace UdemyASP2.Dtos
         public byte? MemberShipTypeId { get; set; }
 
         public MembershipTypeDto MembershipType { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string PhoneNumber { get; set; }
     }
 }
