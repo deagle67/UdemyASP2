@@ -23,9 +23,5 @@ namespace UdemyASP2.Dtos
         public byte? MemberShipTypeId { get; set; }
 
         public MembershipTypeDto MembershipType { get; set; }
-
-        [Required]
-        [StringLength(50)]
-        public string PhoneNumber { get; set; }
     }
 }
