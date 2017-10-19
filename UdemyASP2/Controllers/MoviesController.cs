@@ -48,7 +48,6 @@ namespace UdemyASP2.Controllers
             return Content(year + "/" + month);
         }*/
 
-        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Details(int id)
         {
             var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);
@@ -76,7 +75,6 @@ namespace UdemyASP2.Controllers
             return View("MovieForm", viewModel);
         }
 
-        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Edit(int id)
         {
             var movie = _context.Movies.Single(m => m.Id == id);
@@ -96,7 +94,6 @@ namespace UdemyASP2.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Save(Movie movie)
         {
             if(!ModelState.IsValid)
