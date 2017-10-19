@@ -8,6 +8,10 @@ namespace UdemyASP2.Models
         [Required]
         [Display(Name = "Courrier électronique")]
         public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "Driving License")]
+        public string DrivingLicense { get; set; }
     }
 
     public class ExternalLoginListViewModel
