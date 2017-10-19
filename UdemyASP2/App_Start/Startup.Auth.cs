@@ -54,9 +54,9 @@ namespace UdemyASP2
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "324768764656892",
+               appSecret: "49a4ecf1414399c14f8487bede5f75d0");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
