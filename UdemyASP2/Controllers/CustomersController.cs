@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using UdemyASP2.ViewModels;
 using UdemyASP2.Models;
 using System.Data.Entity;
+using System.Runtime.Caching;
 
 namespace UdemyASP2.Controllers
 {
@@ -26,14 +27,11 @@ namespace UdemyASP2.Controllers
 
         public ActionResult Index()
         {
-            /*var customersViewModel = new CustomersViewModel
-            {
-                customers = listCustomers
-            };
-            */
 
-            //var customers = _context.Customers.Include(c => c.MemberShipType).ToList();
+            if (MemoryCache.Default["Genres"] == null)
+                MemoryCache.Default["Genres"] = _context.Genres.ToList();
 
+            var genres = MemoryCache.Default["Genres"] as IEnumerable<Genre>;
             return View();
         }
 
