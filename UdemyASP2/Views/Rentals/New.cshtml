@@ -1,23 +1,32 @@
 ﻿
 @{
     ViewBag.Title = "New Rental Form";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>New Rental Form</h2>
 
-<form>
+<form id="newRental">
     <div class="form-group">
         <label>Customer</label>
-        <input id="customers" type="text" value="" class="form-control" />
+        <div class="tt-container">
+            <input id="customers" type="text" value="" class="form-control" />
+        </div>
     </div>
 
     <div class="form-group">
         <label>Movies</label>
-        <input id="movies" type="text" value="" class="form-control" />
+        <div class="tt-container">
+            <input id="movie" type="text" value="" class="form-control" />
+        </div>
     </div>
-    <button class="btn btn-primary">Submit</button>
 
+    <div class="row">
+        <div class="col-md-4 col-sm-4">
+            <ul id="movies" class="list-group"></ul>
+        </div>
+    </div>
+
+    <button class="btn btn-primary">Submit</button>
 </form>
 
 @section Scripts
@@ -25,13 +34,24 @@
     <script>
         $(document).ready(function () {
 
-            var vm = {};
+            var vm = {
+                moviesIds: []
+            };
 
             var customers = new Bloodhound({
                 datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
                 queryTokenizer: Bloodhound.tokenizers.whitespace,
                 remote: {
                     url: '/api/customers/?query=%QUERY',
+                    wildcard: '%QUERY'
+                }
+            });
+
+            var movies = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                remote: {
+                    url: '/api/movies/?query=%QUERY',
                     wildcard: '%QUERY'
                 }
             });
@@ -46,7 +66,44 @@
                 }).on("typeahead:select", function (e, customer) {
                     vm.customerId = customer.id;
                 });
+
+            $('#movie').typeahead({
+                minLength: 2,
+                highlight: true
+            }, {
+                    name: 'movies',
+                    display: 'name',
+                    source: movies
+                }).on("typeahead:select", function (e, movie) {
+                    $("#movies").append("<li class='list-group-item'>" + movie.name + "</li>");
+                    $("#movie").typeahead("val", "");
+
+                    vm.moviesIds.push(movie.id);
+                });
+
+            $('#newRental').submit(function (e) {
+                e.preventDefault();
+
+                $.ajax({
+                    url: "/api/newrentals",
+                    method: "post",
+                    data: vm
+                })
+                .done(function () {
+                    console.log("done");
+                })
+                    .fail(function () {
+                    console.log("=====");
+                    console.log("error");
+                    console.log("vm.customerId : " + vm.customerId);
+                    console.log("vm.movieIds.length : " + vm.movieIds.length);
+                    console.log("vm.movieIds[0] : " + vm.movieIds[0]);
+                    console.log("vm.movieIds[1] : " + vm.movieIds[1]);
+                    console.log("=====");
+                });
+            });
         });
+
     </script>
 }
 

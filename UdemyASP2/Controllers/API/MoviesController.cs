@@ -20,12 +20,19 @@ namespace UdemyASP2.Controllers.API
         }
 
         // GET /api/movies
-        public IHttpActionResult GetMovies()
+        public IHttpActionResult GetMovies(string query = null)
         {
-            var moviesDto = _context.Movies
+            var moviesQuery = _context.Movies
                 .Include(m => m.Genre)
+                .Where(m => m.NumberAvailable > 0);
+
+            if(!String.IsNullOrWhiteSpace(query))
+                moviesQuery = moviesQuery.Where(m => m.Name.Contains(query));
+
+            var moviesDto = moviesQuery
                 .ToList()
                 .Select(Mapper.Map<Movie, MovieDto>);
+
             return Ok(moviesDto);
         }
 
