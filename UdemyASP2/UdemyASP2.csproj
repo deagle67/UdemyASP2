@@ -209,6 +209,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\RentalsController.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
     <Compile Include="Dtos\GenreDto.cs" />
     <Compile Include="Dtos\MembershipTypeDto.cs" />
@@ -315,6 +316,10 @@
     <Compile Include="Migrations\201710201550364_SetRental.cs" />
     <Compile Include="Migrations\201710201550364_SetRental.Designer.cs">
       <DependentUpon>201710201550364_SetRental.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710211522529_AddAvailableMovie.cs" />
+    <Compile Include="Migrations\201710211522529_AddAvailableMovie.Designer.cs">
+      <DependentUpon>201710211522529_AddAvailableMovie.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -650,9 +655,11 @@
     <Content Include="Views\Customers\CustomerForm.cshtml" />
     <Content Include="Views\Movies\MovieForm.cshtml" />
     <Content Include="Views\Movies\ReadOnlyList.cshtml" />
+    <Content Include="Views\Rentals\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Rental\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -742,6 +749,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710201550364_SetRental.resx">
       <DependentUpon>201710201550364_SetRental.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710211522529_AddAvailableMovie.resx">
+      <DependentUpon>201710211522529_AddAvailableMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -25,10 +25,15 @@ namespace UdemyASP2.Controllers.API
                 .Single(c => c.Id == newRentalDto.CustomerId);
 
             var movies = _context.Movies
-                .Where(m => newRentalDto.MoviesIds.Contains(m.Id));
+                .Where(m => newRentalDto.MoviesIds.Contains(m.Id)).ToList();
 
             foreach(var movie in movies)
             {
+                if (movie.NumberAvailable == 0)
+                    return BadRequest("Movie is not available");
+
+                movie.NumberAvailable--;
+
                 _context.Rentals.Add(new Rental
                 {
                     Customer = customer,

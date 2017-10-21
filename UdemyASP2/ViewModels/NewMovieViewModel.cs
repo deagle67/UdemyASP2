@@ -22,6 +22,11 @@ namespace UdemyASP2.ViewModels
         [Range(1,20)]
         public int? NumberInStock { get; set; }
 
+        [Required]
+        [Range(0, 20)]
+        [Display(Name = "Number Available")]
+        public int NumberAvailable { get; set; }
+
         public int GenreId { get; set; }
 
         public IEnumerable<Genre> Genres { get; set; }
@@ -38,6 +43,7 @@ namespace UdemyASP2.ViewModels
             ReleaseDate = movie.ReleaseDate;
             NumberInStock = movie.NumberInStock;
             GenreId = movie.GenreId;
+            NumberAvailable = movie.NumberAvailable;
         }
 
     }
