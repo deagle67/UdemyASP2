@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyASP2", "UdemyASP2\UdemyASP2.csproj", "{35D9F6F8-7714-470E-8252-5BD958A92EDF}"
 EndProject
@@ -9,12 +9,15 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Testing|Any CPU = Testing|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{35D9F6F8-7714-470E-8252-5BD958A92EDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{35D9F6F8-7714-470E-8252-5BD958A92EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35D9F6F8-7714-470E-8252-5BD958A92EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35D9F6F8-7714-470E-8252-5BD958A92EDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35D9F6F8-7714-470E-8252-5BD958A92EDF}.Testing|Any CPU.ActiveCfg = Testing|Any CPU
+		{35D9F6F8-7714-470E-8252-5BD958A92EDF}.Testing|Any CPU.Build.0 = Testing|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
