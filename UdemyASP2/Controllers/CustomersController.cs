@@ -32,7 +32,11 @@ namespace UdemyASP2.Controllers
                 MemoryCache.Default["Genres"] = _context.Genres.ToList();
 
             var genres = MemoryCache.Default["Genres"] as IEnumerable<Genre>;
-            return View();
+
+            if (User.IsInRole(RoleName.CanManageMovies))
+                return View("List");
+
+            return View("ReadOnlyList");
         }
 
         //[Route("customers/details/{id}")]
