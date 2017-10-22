@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using UdemyASP2.Models;
+using System.Configuration;
 
 namespace UdemyASP2
 {
@@ -55,8 +56,8 @@ namespace UdemyASP2
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
-               appId: "324768764656892",
-               appSecret: "49a4ecf1414399c14f8487bede5f75d0");
+               appId: ConfigurationManager.AppSettings["FacebookAppId"],
+               appSecret: ConfigurationManager.AppSettings["FacebookAppSecret"]);
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
