@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Http;
 using UdemyASP2.Models;
+using System.Data.Entity;
+using UdemyASP2.Dtos;
 
 namespace UdemyASP2.Controllers.API
 {
@@ -45,6 +47,29 @@ namespace UdemyASP2.Controllers.API
             _context.SaveChanges();
 
             return Ok();
+        }
+
+        public IHttpActionResult GetNewRentals()
+        {
+            var rentals = _context.Rentals
+                .Include(c => c.Customer)
+                .Include(m => m.Movies)
+                .ToList().OrderBy(r => r.Customer.Name);
+
+            var rentalsList = new List<RentalsDto>();
+            foreach (var rental in rentals)
+            {
+                var item = new RentalsDto
+                {
+                    Customer = rental.Customer.Name,
+                    Movie = rental.Movies.Name,
+                    DateRented = rental.DateRented.ToLongDateString(),
+                    DateReturned = rental.DateReturned?.ToLongDateString()
+                };
+                rentalsList.Add(item);
+            }
+
+            return Ok(rentalsList.ToList());
         }
     }
 }

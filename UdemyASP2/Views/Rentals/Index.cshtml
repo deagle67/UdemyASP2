@@ -1,0 +1,52 @@
+﻿@model IEnumerable<UdemyASP2.Dtos.RentalsDto>
+
+@{
+    ViewBag.Title = "Rentals list";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Rentals</h2>
+
+<div> 
+    <table id="rentals" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Customer</th>
+                <th>Movie</th>
+                <th>Date Rented</th>
+                <th>Date Returned</th>
+            </tr>
+        </thead>
+        <tbody>
+            @*DataTable*@
+        </tbody>
+    </table>
+</div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            var table = $("#rentals").DataTable({
+                ajax: {
+                    url: "/api/newRentals",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "customer"
+                    },
+                    {
+                        data: "movie"
+                    },
+                    {
+                        data: "dateRented"
+                    },
+                    {
+                        data: "dateReturned"
+                    }
+                ]
+            });
+        });
+    </script>
+}
